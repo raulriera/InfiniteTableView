@@ -45,6 +45,7 @@ tableView = new InfiniteTableView({
 
 onTableViewAtBottom = function(e) {
   var rows = []
+  // So something with `rows` here, make an HTTP request, or something just remember to populate that array with `TableViewRow` objects
   tableView.updateData(rows);
 };
 
