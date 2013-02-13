@@ -22,6 +22,7 @@ onTableViewAtBottom = (e) ->
 	
 	# Populate your rows here 
 	# [populate code, maybe fetching from the server]
+	rows = []
 	
 	# Use the custom `updateData` method to update your rows (pass an array of `TableViewRow` objects)
 	tableView.updateData rows
@@ -43,6 +44,7 @@ tableView = new InfiniteTableView({
     });
 
 onTableViewAtBottom = function(e) {
+  var rows = []
   tableView.updateData(rows);
 };
 
