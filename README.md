@@ -6,7 +6,7 @@ In your app.coffee (or elsewhere), call:
 
 ```coffeecript
 # Load the module
-InfiniteTableView = require "/views/commons/InfiniteTableView"
+InfiniteTableView = require "/InfiniteTableView"
 
 # Create an infinite tableview instance
 tableView = new InfiniteTableView(data: [
@@ -35,7 +35,7 @@ In your app.js (or elsewhere), call
 ```javascript
 var InfiniteTableView, onTableViewAtBottom, tableView;
 
-InfiniteTableView = require("/views/commons/InfiniteTableView");
+InfiniteTableView = require("/InfiniteTableView");
 
 tableView = new InfiniteTableView({
     data: [{ title: "Row"},
