@@ -2,15 +2,20 @@
 **InfiniteTableView** is a wrapper around a normal `TableView` to enable "infinite" scrolling. Every time you reach the bottom of the tableview it will dispatch an event letting you know, add a `LoadingTableView` and wait for your response to update the content of the `TableView`. 
 
 ##Usage:
-In your app.js (or elsewhere), call:
+In your app.coffee (or elsewhere), call:
 
 ```coffeecript
 # Load the module
 InfiniteTableView = require "/views/commons/InfiniteTableView"
 
 # Create an infinite tableview instance
-tableView = new InfiniteTableView
-	data: { title: "Row", title: "Row", title: "Row", title: "Row" }
+tableView = new InfiniteTableView(data: [
+  title: "Row"
+,
+  title: "Row"
+,
+  title: "Row"
+])
 
 # Use this method to fetch your new data
 onTableViewAtBottom = (e) ->
@@ -23,6 +28,25 @@ onTableViewAtBottom = (e) ->
 
 # Listen for when the tableview is at the bottom
 tableView.addEventListener "tableViewAtBottom", onTableViewAtBottom
+```
+
+In your app.js (or elsewhere), call
+```javascript
+var InfiniteTableView, onTableViewAtBottom, tableView;
+
+InfiniteTableView = require("/views/commons/InfiniteTableView");
+
+tableView = new InfiniteTableView({
+    data: [{ title: "Row"},
+        {title: "Row"},
+        {title: "Row"}]
+    });
+
+onTableViewAtBottom = function(e) {
+  tableView.updateData(rows);
+};
+
+tableView.addEventListener("tableViewAtBottom", onTableViewAtBottom);
 ```
 
 ##Methods available
