@@ -4,7 +4,7 @@
 ##Usage:
 In your app.coffee (or elsewhere), call:
 
-```coffeecript
+```coffeescript
 # Load the module
 InfiniteTableView = require "/InfiniteTableView"
 
